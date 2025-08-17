@@ -29,6 +29,7 @@ pipeline {
                 script {
                     sh """
                         echo "Hello Build"
+                        sleep 10
                         env
                         echo "Hello ${params.PERSON}"
                     """
