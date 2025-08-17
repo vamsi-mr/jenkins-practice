@@ -15,6 +15,11 @@ pipeline {
     }
 
     stages{ 
+        stage('Show Workspace') {
+            steps {
+                sh 'pwd && ls -l'
+            }
+        }
         stage('Build') {
             steps {
                 script {
