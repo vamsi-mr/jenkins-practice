@@ -48,7 +48,7 @@ pipeline {
         }
         stage('Deploy') {
             input {
-                messgae "Should we continue?"
+                message "Should we continue?"
                 ok "Yes, we should."
                 submitter "alice,bob"
                 parameters {
