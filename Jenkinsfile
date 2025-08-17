@@ -20,7 +20,6 @@ pipeline {
                 script {
                     sh """
                         echo "Hello Build"
-                        sleep 10
                         env
                     """
                 }
@@ -29,14 +28,20 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    echo 'Testing...'
+                    sh """
+                        echo "Hello Build"
+                        env
+                    """
                 }
             }
         }
         stage('Deploy') {
             steps {
                 script {
-                    echo 'Deploying...'
+                    sh """
+                        echo "Hello Build"
+                        env
+                    """
                 }
             }
         }
