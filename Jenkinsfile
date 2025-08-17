@@ -50,7 +50,7 @@ pipeline {
             input {
                 messgae "Should we continue?"
                 ok "Yes, we should."
-                submitter "Bob"
+                submitter "alice,bob"
                 parameters {
                     string(name: 'PERSON', defaultValue: 'Mr Mohan Vamsi Ravada', description: 'How are you')
                 }
