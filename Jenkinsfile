@@ -14,6 +14,10 @@ pipeline {
         disableConcurrentBuilds()
     }
 
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Mohan Vamsi Ravada', description: 'How are you')
+    }
+
     stages{ 
         stage('Show Workspace') {
             steps {
@@ -26,6 +30,7 @@ pipeline {
                     sh """
                         echo "Hello Build"
                         env
+                        echo "Hello ${params.PERSON}"
                     """
                 }
             }
