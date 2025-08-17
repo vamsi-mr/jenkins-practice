@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        echo "Hello Build"
+                        echo "Hello Build..."
                         sleep 10
                         env
                         echo "Hello ${params.PERSON}"
@@ -40,18 +40,27 @@ pipeline {
             steps {
                 script {
                     sh """
-                        echo "Hello Build"
+                        echo "Hello Testing..."
                         env
                     """
                 }
             }
         }
         stage('Deploy') {
+            input {
+                messgae "Should we continue?"
+                ok "Yes, we should."
+                submitter "Bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Mohan Vamsi Ravada', description: 'How are you')
+                }
+            }
             steps {
                 script {
                     sh """
-                        echo "Hello Build"
+                        echo "Hello Deploying..."
                         env
+                        echo "Hello, ${PERSON}, nice to meet you."
                     """
                 }
             }
@@ -71,3 +80,4 @@ pipeline {
         }
     }
 }
+
